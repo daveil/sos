@@ -2,11 +2,14 @@
 class TicketsController extends AppController {
 
 	var $name = 'Tickets';
-
+	var $helpers = array('Html','Text');
 	function index() {
 		if($this->RequestHandler->isAjax()){
 			$response = $this->Ticket->find('all',array('order'=>'modified DESC','limit'=>3));
 			echo json_encode($response);exit;
+		} else if( $this->RequestHandler->isRss() ){
+			$tickets = $this->Ticket->find('all', array('limit' => 20, 'order' => 'Ticket.modified DESC'));
+			return $this->set(compact('tickets'));
 		}else{
 			$this->Ticket->recursive = 0;
 			$this->set('tickets', $this->paginate());			
