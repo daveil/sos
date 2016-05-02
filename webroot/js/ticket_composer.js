@@ -1,6 +1,6 @@
  SOS.controller('TicketComposer',function($scope,$rootScope,$http){
 	$scope.submitTicket = function(){
-		if($scope.saving) alert('Saving. Please wait.');
+		if($scope.saving) return alert('Saving. Please wait.');
 		var ticket  = {
 				school:$scope.Ticket.school,
 				system:$scope.Ticket.system,
