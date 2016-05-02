@@ -4,6 +4,9 @@
 		<legend><?php __('Edit Ticket'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
+		echo $this->Form->input('school');
+		echo $this->Form->input('system');
+		echo $this->Form->input('module');
 		echo $this->Form->input('content');
 		echo $this->Form->input('status');
 	?>

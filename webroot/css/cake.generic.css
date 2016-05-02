@@ -538,3 +538,5 @@ div.code-coverage-results span.result-good {
 #url-rewriting-warning {
 	display: none;
 }
+.pull-left{float:left;}
+.pull-right{float:right;}
