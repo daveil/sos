@@ -50,7 +50,7 @@
  *
  */
 	if (!defined('CAKE_CORE_INCLUDE_PATH')) {
-		define('CAKE_CORE_INCLUDE_PATH', 'D:');
+		define('CAKE_CORE_INCLUDE_PATH', '/home1/tssierbc/public_html/');
 	}
 
 /**
