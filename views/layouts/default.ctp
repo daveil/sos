@@ -50,7 +50,15 @@
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
 	<?php echo $this->Html->script('bower_components/angular/angular.min');?>
-	<script type="text/javascript">(function(){window.SOS = angular.module('SOS',[])})();</script>
+	<script type="text/javascript">
+	(function(){
+		window.SOS = angular.module('SOS',[]);
+		SOS.config(['$httpProvider', function($httpProvider) {
+			$httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+		}]);
+	})();
+	
+	</script>
 	<?php  echo $scripts_for_layout; ?>
 </body>
 </html>
