@@ -27,9 +27,9 @@
 		$scope.Ticket = {};
 	}
 	function ticketContentComposer(ticket){
-		var content =  ticket.module + ';';
-			content += ticket.concern + '\n';
-			content += ticket.user + '-' +ticket.level_section + '\n' ;
+		var content =  ticket.module + '; ';
+			content += ticket.concern + ' \n';
+			content += ticket.user + '-' +ticket.level_section + ' \n' ;
 			if(ticket.student_number)
 				content += ticket.student_number + '-';
 			if(ticket.student_name)
