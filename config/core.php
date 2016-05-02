@@ -302,3 +302,4 @@
  *
  */
 	Cache::config('default', array('engine' => 'File'));
+	ini_set('display_errors',1);

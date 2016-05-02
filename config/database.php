@@ -5,9 +5,10 @@ class DATABASE_CONFIG {
 		'driver' => 'mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'root',
-		'password' => '',
-		'database' => 'sos_tssi_160502',
+		'login' => 'tssierbc_admin',
+		'password' => 'Il0v3th3l@',
+		'database' => 'tssierbc_sos_tssi',
+		'encoding'=>'utf8'
 	);
 }
 ?>
