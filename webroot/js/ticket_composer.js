@@ -1,5 +1,6 @@
  SOS.controller('TicketComposer',function($scope,$rootScope,$http){
 	$scope.submitTicket = function(){
+		if($scope.saving) alert('Saving. Please wait.');
 		var ticket  = {
 				school:$scope.Ticket.school,
 				system:$scope.Ticket.system,
@@ -7,8 +8,10 @@
 				content:ticketContentComposer($scope.Ticket),
 				json_data:JSON.stringify($scope.Ticket),
 		};
+		$scope.saving =true;
 		$http.post('tickets/add',ticket)
 			.then(function success(response){
+				$scope.saving = false;
 				var tid = response.data.Ticket.id;
 				if(tid){
 					alert('Ticket #'+tid+ ' has been created.');
@@ -16,6 +19,7 @@
 					$scope.cancelTicket();
 				}
 			},function error(response){
+				$scope.saving =false;
 				alert('ERROR:'+response);
 			});
 	}
@@ -26,7 +30,10 @@
 		var content =  ticket.module + ';';
 			content += ticket.concern + '\n';
 			content += ticket.user + '-' +ticket.level_section + '\n' ;
-			content += ticket.student_number + '-' +ticket.student_name + '\n' ;
+			if(ticket.student_number)
+				content += ticket.student_number + '-';
+			if(ticket.student_name)
+				content += ticket.student_name + '\n' ;
 		return content;
 	}
 });
