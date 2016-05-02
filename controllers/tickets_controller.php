@@ -8,7 +8,13 @@ class TicketsController extends AppController {
 			$response = $this->Ticket->find('all',array('order'=>'modified DESC','limit'=>3));
 			echo json_encode($response);exit;
 		} else if( $this->RequestHandler->isRss() ){
-			$tickets = $this->Ticket->find('all', array('limit' => 20, 'order' => 'Ticket.modified DESC'));
+			$limit = 20;
+			$order = 'Ticket.modified DESC';
+			$conditions = array();
+			if(isset($_GET['sys'])){
+				$conditions['Ticket.system'] = $_GET['sys'];
+			}
+			$tickets = $this->Ticket->find('all', compact('limit','order','conditions'));
 			return $this->set(compact('tickets'));
 		}else{
 			$this->Ticket->recursive = 0;
