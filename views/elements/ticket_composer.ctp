@@ -23,8 +23,8 @@
 {{Ticket.user}} - {{Ticket.level_section}}  				
 {{Ticket.student_name}} {{Ticket.student_number}}
 </pre>
-<?php echo $this->Form->submit('Submit Ticket',array('type'=>'button')); ?>
-<?php echo $this->Form->submit('Cancel Ticket',array('type'=>'reset')); ?>
+<?php echo $this->Form->submit('Submit Ticket',array('type'=>'button','ng-click'=>'submitTicket()')); ?>
+<?php echo $this->Form->submit('Cancel Ticket',array('type'=>'reset','ng-click'=>'cancelTicket()')); ?>
 NOTES:
 <ul>
 	<li>* Use keyword "ALL" to denote scope <i>(ex. ALL GS, ALL G7)</i></li>

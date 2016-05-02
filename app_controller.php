@@ -31,4 +31,11 @@
  * @subpackage    cake.app
  */
 class AppController extends Controller {
+	var $components = array('RequestHandler','Session');
+	function beforeFilter(){
+		$endpoint = $this->modelClass;
+		$__Class = Inflector::classify($endpoint);
+		$input = file_get_contents('php://input');
+		$this->data = array($__Class=>json_decode($input,true));
+	}
 }

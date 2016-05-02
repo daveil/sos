@@ -3,6 +3,9 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
+			<th><?php echo $this->Paginator->sort('school');?></th>
+			<th><?php echo $this->Paginator->sort('system');?></th>
+			<th><?php echo $this->Paginator->sort('module');?></th>
 			<th><?php echo $this->Paginator->sort('content');?></th>
 			<th><?php echo $this->Paginator->sort('status');?></th>
 			<th><?php echo $this->Paginator->sort('created');?></th>
@@ -19,6 +22,9 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $ticket['Ticket']['id']; ?>&nbsp;</td>
+		<td><?php echo $ticket['Ticket']['school']; ?>&nbsp;</td>
+		<td><?php echo $ticket['Ticket']['system']; ?>&nbsp;</td>
+		<td><?php echo $ticket['Ticket']['module']; ?>&nbsp;</td>
 		<td><?php echo $ticket['Ticket']['content']; ?>&nbsp;</td>
 		<td><?php echo $ticket['Ticket']['status']; ?>&nbsp;</td>
 		<td><?php echo $ticket['Ticket']['created']; ?>&nbsp;</td>

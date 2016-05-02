@@ -3,6 +3,9 @@
 	<fieldset>
 		<legend><?php __('Add Ticket'); ?></legend>
 	<?php
+		echo $this->Form->input('school');
+		echo $this->Form->input('system');
+		echo $this->Form->input('module');
 		echo $this->Form->input('content');
 		echo $this->Form->input('status');
 	?>
